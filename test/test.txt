@@ -1,0 +1,77 @@
+1Q] The difference between compile time and runtime are as follows:
+Compile time : The program in which the source code is converted into an executable code. javac is used to compile the code.
+Run time : In run time the executable code starts running.The program which starts running at executable code
+
+2Q] Variables are containers for storing data values.
+types of Variables :
+1.Local Variable : A variable defined within a method is called local variable.
+Ex:-public class StudentDetails{
+	public static void main(String[] args){
+		int age = 5;
+		System.out.println("student age is :" +age);
+		}
+	}
+2.Instance Variables : A Variables are declared in a class outside any method is called instance variable.
+EX:- public class Student{
+		public String name;
+		public studentName(String stuName)
+		{
+		name=stuName;
+		}
+		public static void main(String[] args)
+		{
+		studentName stu1=new studentName("Sushma");
+		}
+	}
+3.Static Variables : A variable which is declared as static is called static variables.
+
+
+4Q] Method :- Method is a collection of statements, which is  used to perform logic/ or used to write some code .
+	Parameter :- Parameter is a value that can pass to a method in java.
+	Argument :- An argument is a value passed to a method when the method is called. Arguments can also be passed at run time.
+	Return type :- The return type defines and constrains the data type of the value returned from a subroutine or method.
+	
+	
+5Q] Encapsulation :- Using access specifier we achieve encapsulation in java, where we provide access using methods, 
+                     we hide the data members(fields), private is access specifier which is used within the class.
+Ex: (Mobile class):-
+		public class Mobile
+		{
+			private  static String unlock="Pin";
+	
+			//getter
+			public static String getUnlock()
+			{	
+				return unlock;
+			}
+			//setter
+			public static void setUnlock(String newUnlock)
+			{
+		
+				if(newUnlock.equals("FingerPrint") || newUnlock.equals("pattern") || newUnlock.equals("face") || newUnlock.equals("password"))		
+				{
+					System.out.println("new unlock is "+newUnlock);
+					unlock=newUnlock;
+				}
+				else{
+					System.out.println("you cannot change the unlock");
+				}
+			}
+		}
+		
+	(MobileTester class):-
+	
+	public class MobileTester
+	{	
+		public static void main(String[] runT)
+		{
+		System.out.println("JVM invoked main");
+		String value=runT[0];
+		String unlockValue=Mobile.getUnlock();
+		System.out.println("unlockValue"+unlockValue);
+		Mobile.setUnlock(value);
+		unlockValue=Mobile.getUnlock();
+		System.out.println("unlockValue"+unlockValue);
+		System.out.println("EXIT :: main");
+		}
+	}
